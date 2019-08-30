@@ -9,7 +9,7 @@ import stress_analysis
 import luis
 
 import os
-THRESHOLD = 0.9
+
 DEFAULT_STRESS = 78
 
 stress = DEFAULT_STRESS
@@ -96,7 +96,7 @@ def reset():
     return jsonify({"result":stress, "error":None})
 
 
-# running REST interface, port=5000 for direct test, port=5001 for deployment from PM2
+# running REST interface, port=3000
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3000)
 
