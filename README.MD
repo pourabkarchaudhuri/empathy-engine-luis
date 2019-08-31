@@ -23,6 +23,10 @@ Install the dependencies and devDependencies and start the server running on `PO
 
 ```sh
 $ cd empathy-engine-luis
+```
+Create a `.env` file and put the keys and endpoints for LUIS as `LUIS_KEY` and `LUIS_ENDPOINT`
+
+```sh
 $ pip install -r requirements.txt
 $ python app.py
 ```
