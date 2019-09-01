@@ -31,6 +31,11 @@ The LUIS AI is trained on intents around the following. Feel free to speak aroun
   - Can you move?
   - Come with me
 
+### LUIS Intents
+
+The intents for LUIS are given as a json file that can be imported into LUIS. 
+It is the file called `x` present in the root directory of this repository.
+
 ### Installation
 
 This repository requires [Python](https://www.python.org/downloads/) v3.6 to run.
