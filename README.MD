@@ -14,6 +14,22 @@ This is the backend server for the conversational AI used in the implementation 
 
 This project is built using `Python 3.6.1`
 
+#### Conversation Training
+
+The LUIS AI is trained on intents around the following. Feel free to speak around them to get the objective complete. You dont have to speak the exact sentences, just on the same context.
+
+  - Hi/Hello
+  - What is your name?
+  - How old are you?
+  - Are you okay?
+  - I'm here to help
+  - Where is your family?
+  - Do you live here?
+  - What happened?
+  - Are you hungry?
+  - Are you injured?
+  - Can you move?
+  - Come with me
 
 ### Installation
 
