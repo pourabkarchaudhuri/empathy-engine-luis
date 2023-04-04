@@ -1,0 +1,815 @@
+{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "Disaster Simulator Bot",
+  "desc": "The Conversational AI for the Tulane Disaster Empathy engine",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "contact_with_other_people"
+    },
+    {
+      "name": "extraction"
+    },
+    {
+      "name": "farewells"
+    },
+    {
+      "name": "food"
+    },
+    {
+      "name": "greeting"
+    },
+    {
+      "name": "help"
+    },
+    {
+      "name": "me_looking_at_you"
+    },
+    {
+      "name": "moving_somewhere"
+    },
+    {
+      "name": "my_age"
+    },
+    {
+      "name": "my_family"
+    },
+    {
+      "name": "my_feelings"
+    },
+    {
+      "name": "my_injuries"
+    },
+    {
+      "name": "my_medication"
+    },
+    {
+      "name": "my_name"
+    },
+    {
+      "name": "my_residence"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "preparation"
+    },
+    {
+      "name": "random_things"
+    },
+    {
+      "name": "struggle"
+    },
+    {
+      "name": "water"
+    },
+    {
+      "name": "what_happened"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "anyone else here?",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "anyone else living with you?",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "are there others",
+      "intent": "contact_with_other_people",
+      "entities": []
+    },
+    {
+      "text": "are you alone",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "are you alright",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you better now",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you feeling alright",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you feeling hungry",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "are you feeling ok",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you feeling thirsty",
+      "intent": "water",
+      "entities": []
+    },
+    {
+      "text": "are you fine now",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you hungry?",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "are you hurt?",
+      "intent": "my_injuries",
+      "entities": []
+    },
+    {
+      "text": "are you hydrated?",
+      "intent": "water",
+      "entities": []
+    },
+    {
+      "text": "are you injured?",
+      "intent": "my_injuries",
+      "entities": []
+    },
+    {
+      "text": "are you ok",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you okay",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "are you on medication?",
+      "intent": "my_medication",
+      "entities": []
+    },
+    {
+      "text": "are you thirsty?",
+      "intent": "water",
+      "entities": []
+    },
+    {
+      "text": "bye",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "can you come this side",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "can you get up",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "can you hold my hand",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "can you lift your head and look at me",
+      "intent": "me_looking_at_you",
+      "entities": []
+    },
+    {
+      "text": "can you move",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "can you move your hands",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "can you recollect on how the rains started",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "can you stand up",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "can you tell me what happened?",
+      "intent": "what_happened",
+      "entities": []
+    },
+    {
+      "text": "can you tell me your name",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "come with me",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "come with me. i will take you to a safe place",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "did you drink anything?",
+      "intent": "water",
+      "entities": []
+    },
+    {
+      "text": "did you eat anything yet?",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "did you live here",
+      "intent": "my_residence",
+      "entities": []
+    },
+    {
+      "text": "did you try to communicate with anyone else",
+      "intent": "contact_with_other_people",
+      "entities": []
+    },
+    {
+      "text": "did you try to contact anyone",
+      "intent": "contact_with_other_people",
+      "entities": []
+    },
+    {
+      "text": "do you have a family?",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "do you have children?",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "do you have food?",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "do you live alone",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "do you live here?",
+      "intent": "my_residence",
+      "entities": []
+    },
+    {
+      "text": "do you need any medicines?",
+      "intent": "my_medication",
+      "entities": []
+    },
+    {
+      "text": "do you require any special medication?",
+      "intent": "my_medication",
+      "entities": []
+    },
+    {
+      "text": "do you want anything to eat",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "don't be scared",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "don't worry",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "excuse me",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "good bye",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "good day",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "goodbye",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "have you contacted anyone",
+      "intent": "contact_with_other_people",
+      "entities": []
+    },
+    {
+      "text": "have you eaten?",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "have you spoken to anyone",
+      "intent": "contact_with_other_people",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hello is everything ok",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "here to help",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hey there",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hi there",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hold my hand",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "how are you",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you doing",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "how are you feeling",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "how are you holding up",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "how are your food stores?",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "how did this happen at all?",
+      "intent": "what_happened",
+      "entities": []
+    },
+    {
+      "text": "how did this happen?",
+      "intent": "what_happened",
+      "entities": []
+    },
+    {
+      "text": "how did you deal with it",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "how did you fight the situation",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "how did you prepare yourself to face the flood",
+      "intent": "preparation",
+      "entities": []
+    },
+    {
+      "text": "how old are you",
+      "intent": "my_age",
+      "entities": []
+    },
+    {
+      "text": "how was the condition in the surrounding area",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "how you can be helpful?",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "how you could help me?",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "how you were rescued",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "i am going to leave you here",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "i didn't get your name",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "i will find other members",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "im here to get you to safety",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "im here to help",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "i'm here to help you",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "i'm here to save you",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "is it better now",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "is there any injury?",
+      "intent": "my_injuries",
+      "entities": []
+    },
+    {
+      "text": "is there any problem with you",
+      "intent": "my_injuries",
+      "entities": []
+    },
+    {
+      "text": "is there any thing wrong with you now",
+      "intent": "my_injuries",
+      "entities": []
+    },
+    {
+      "text": "is there anyone you had contact with",
+      "intent": "contact_with_other_people",
+      "entities": []
+    },
+    {
+      "text": "is this your apartment",
+      "intent": "my_residence",
+      "entities": []
+    },
+    {
+      "text": "is this your home?",
+      "intent": "my_residence",
+      "entities": []
+    },
+    {
+      "text": "is this your house?",
+      "intent": "my_residence",
+      "entities": []
+    },
+    {
+      "text": "just stay calm",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "let's get you out of here",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "lets get you to safety",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "look at me",
+      "intent": "me_looking_at_you",
+      "entities": []
+    },
+    {
+      "text": "look here",
+      "intent": "me_looking_at_you",
+      "entities": []
+    },
+    {
+      "text": "look into my eyes",
+      "intent": "me_looking_at_you",
+      "entities": []
+    },
+    {
+      "text": "maam",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "may i ask your name",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "nice chatting to you, bye",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "ok come down",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "please stand up",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "please stand up and move backwards",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "please tell me your name",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "see you later",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "stand up",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "stay here",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "stay there",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "stay there i will come around and get you",
+      "intent": "moving_somewhere",
+      "entities": []
+    },
+    {
+      "text": "till next time",
+      "intent": "farewells",
+      "entities": []
+    },
+    {
+      "text": "turn towards me",
+      "intent": "me_looking_at_you",
+      "entities": []
+    },
+    {
+      "text": "we need to get you to a safe place",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "we should get out of here",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "we will find your family members",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "were you alerted of the disaster before it happened",
+      "intent": "preparation",
+      "entities": []
+    },
+    {
+      "text": "what happened?",
+      "intent": "what_happened",
+      "entities": []
+    },
+    {
+      "text": "what help you provide?",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "what is your age",
+      "intent": "my_age",
+      "entities": []
+    },
+    {
+      "text": "what is your name",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "what is your problem",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "what kind of problems did you face initially",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "what kind of struggle you faced due to flood",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "what nonsense",
+      "intent": "random_things",
+      "entities": []
+    },
+    {
+      "text": "what rubbish",
+      "intent": "random_things",
+      "entities": []
+    },
+    {
+      "text": "what support is offered",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "what the hell happened here?",
+      "intent": "what_happened",
+      "entities": []
+    },
+    {
+      "text": "what were the roadblocks",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "what where the situations you faced",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "what you can do?",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "what's your name",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "what's your problem",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "when did you feel you were amidst actual crisis",
+      "intent": "struggle",
+      "entities": []
+    },
+    {
+      "text": "where are your family members",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "where is your father",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "where is your mother",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "who are you",
+      "intent": "my_name",
+      "entities": []
+    },
+    {
+      "text": "who is your family",
+      "intent": "my_family",
+      "entities": []
+    },
+    {
+      "text": "you don't have to worry",
+      "intent": "help",
+      "entities": []
+    },
+    {
+      "text": "you look dehydrated",
+      "intent": "water",
+      "entities": []
+    },
+    {
+      "text": "you look pretty beat up",
+      "intent": "my_feelings",
+      "entities": []
+    },
+    {
+      "text": "you need food",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "you need water",
+      "intent": "water",
+      "entities": []
+    },
+    {
+      "text": "you want something to eat",
+      "intent": "food",
+      "entities": []
+    },
+    {
+      "text": "you will be okay",
+      "intent": "extraction",
+      "entities": []
+    },
+    {
+      "text": "you're already sitting on a plank",
+      "intent": "moving_somewhere",
+      "entities": []
+    }
+  ],
+  "settings": []
+}
