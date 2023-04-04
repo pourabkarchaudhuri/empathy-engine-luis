@@ -1,7 +1,7 @@
 from textblob import TextBlob
 import math
 
-def sentiment_analyzer(text, polarity, inferenced_polarity):
+def sentiment_analyzer(text):
 
     inferenced_subjectivity = ""
 

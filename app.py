@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
 import json
-
+from textblob import TextBlob
 import random
 import sentiment_analysis
 import stress_analysis
@@ -30,17 +30,28 @@ def classify():
     # ERROR_THRESHOLD = THRESHOLD
 
     context = None
+    # print("Trigger")
     sentence = request.json['sentence']
+
+    # print(sentence)
    
     nlu = json.loads(luis.luis_api(sentence))
-
+    print(nlu)
     return_list = []
     # output_context = None
     entities = None
     # print("LUIS NLU Inference : ", nlu['topScoringIntent']['intent'])
-    sentiment = sentiment_analysis.sentiment_analyzer(sentence, nlu['sentimentAnalysis']['score'], nlu['sentimentAnalysis']['label'])
-    if nlu['topScoringIntent']['intent'] == "None":
-        # print("Fallback detected")
+    blob = TextBlob(sentence)
+    sentiment = blob.sentiment.polarity * 100
+    print("Sentiment", sentiment)
+    sentiment = sentiment_analysis.sentiment_analyzer(sentence)
+    print("Generated Sentiment", sentiment)
+    intent_name = nlu['prediction']['topIntent']
+    print("intentname", intent_name)
+    score = nlu['prediction']['intents'][intent_name]['score']
+    print("score", score)
+    if intent_name == "None":
+        print("Fallback detected")
         
         stress_payload = stress_analysis.stress_analyzer(sentiment['polarity'], 'fallback', stress)
 
@@ -50,13 +61,13 @@ def classify():
         reaction = stress_payload['reaction']
         completion = stress_payload['completion']
 
-        return_list.append({"query": sentence, "intent": "fallback", "response": random.choice(fallback_dict), "context": context, "probability": "{0:.2f}".format(nlu['topScoringIntent']['score']), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger": trigger, "responsive":responsive, "reaction":reaction, 'completion':False})
+        return_list.append({"query": sentence, "intent": "fallback", "response": random.choice(fallback_dict), "context": context, "probability": "{0:.2f}".format(score), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger": trigger, "responsive":responsive, "reaction":reaction, 'completion':False})
        
         
     else:
-        # print("Inference Exists")
+        print("Inference Exists")
         
-        stress_payload = stress_analysis.stress_analyzer(sentiment['polarity'], nlu['topScoringIntent']['intent'], stress)
+        stress_payload = stress_analysis.stress_analyzer(sentiment['polarity'], intent_name , stress)
 
         stress = stress_payload['stress']
         trigger = stress_payload['trigger']
@@ -66,18 +77,18 @@ def classify():
 
         if completion is True:
             # print("Extraction completion event triggered!")
-            return_list.append({"query": sentence, "intent": nlu['topScoringIntent']['intent'], "response": random.choice(extraction_dict), "context": context, "probability": "{0:.2f}".format(nlu['topScoringIntent']['score']), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger":trigger, "responsive":responsive, "reaction":reaction, 'completion':completion})
+            return_list.append({"query": sentence, "intent": intent_name , "response": random.choice(extraction_dict), "context": context, "probability": "{0:.2f}".format(score), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger":trigger, "responsive":responsive, "reaction":reaction, 'completion':completion})
 
         else:
             if stress_payload['repeat'] is not None:
-                return_list.append({"query": sentence, "intent": nlu['topScoringIntent']['intent'], "response": random.choice(repeat_dict) + " " + "You are only talking about " + nlu['topScoringIntent']['intent'].replace("_", " "), "context": context, "probability": "{0:.2f}".format(nlu['topScoringIntent']['score']), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger":trigger, "responsive":responsive, "reaction":reaction, 'completion':completion})
+                return_list.append({"query": sentence, "intent": intent_name , "response": random.choice(repeat_dict) + " " + "You are only talking about " + intent_name.replace("_", " "), "context": context, "probability": "{0:.2f}".format(score), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger":trigger, "responsive":responsive, "reaction":reaction, 'completion':completion})
             
             else:              
                 for x_tend in intents['intents']:
-                    if nlu['topScoringIntent']['intent'] == x_tend['tag']:
+                    if intent_name == x_tend['tag']:
                         normal_response = random.choice(x_tend['responses'])
     
-                        return_list.append({"query": sentence, "intent": nlu['topScoringIntent']['intent'], "response": normal_response, "context": context, "probability": "{0:.2f}".format(nlu['topScoringIntent']['score']), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger":trigger, "responsive":responsive, "reaction":reaction, 'completion':completion})
+                        return_list.append({"query": sentence, "intent": intent_name , "response": normal_response, "context": context, "probability": "{0:.2f}".format(score), "entities": entities, "sentiment":sentiment, "stress":stress, "trigger":trigger, "responsive":responsive, "reaction":reaction, 'completion':completion})
 
     response = jsonify({"result":return_list, "error":None})
     # print("Completion Status : {}".format(completion))
